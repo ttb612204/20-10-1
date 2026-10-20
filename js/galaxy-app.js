@@ -6,8 +6,8 @@
 (function () {
   'use strict';
 
-  // 1. DATA: 5 REAL PHOTOS OF BÙI THỊ HƯƠNG GIANG (HOSTED ON CLOUD CDN)
-  const celestialPhotos = [
+  // 1. DATA: 5 REAL PHOTOS OF BÙI THỊ HƯƠNG GIANG (BASE64 SECURE EMBEDDED)
+  const celestialPhotos = window.CELESTIAL_PHOTOS || [
     {
       src: 'https://files.catbox.moe/0vjpta.jpg',
       badge: 'Khoảnh khắc #01',
@@ -40,44 +40,94 @@
     }
   ];
 
-  // 2. AUDIO CONTROLLER
+  // Auto-inject photo sources into DOM (Stage 2 cards & Stage 3 heart nodes)
+  function initPhotosDOM() {
+    celestialPhotos.forEach((item, idx) => {
+      const cardImg = document.querySelector(`.celestial-card-item[data-idx="${idx}"] img`);
+      if (cardImg) cardImg.src = item.src;
+
+      const heartImg = document.querySelector(`.heart-node-photo[data-idx="${idx}"] img`);
+      if (heartImg) heartImg.src = item.src;
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPhotosDOM);
+  } else {
+    initPhotosDOM();
+  }
+
+  // 2. AUDIO CONTROLLER (AUTO-PLAY ALWAYS ON LOAD)
   const bgMusic = document.getElementById('bg-music');
   const musicWidget = document.getElementById('music-widget');
   const musicLabel = document.getElementById('music-label');
   let isMusicPlaying = false;
 
+  function updateMusicUI(playing) {
+    isMusicPlaying = playing;
+    if (musicWidget) {
+      if (playing) musicWidget.classList.add('is-playing');
+      else musicWidget.classList.remove('is-playing');
+    }
+    if (musicLabel) {
+      musicLabel.textContent = playing ? 'Nhạc: Bật' : 'Nhạc: Tắt';
+    }
+  }
+
+  function startMusic() {
+    if (!bgMusic || isMusicPlaying) return;
+    bgMusic.volume = 0.55;
+    const playPromise = bgMusic.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        updateMusicUI(true);
+        removeAutoplayListeners();
+      }).catch(() => {
+        // Browser blocked zero-click audio without gesture; will auto-start on first touch/interaction
+      });
+    }
+  }
+
   function toggleAudio() {
     if (!bgMusic) return;
     if (isMusicPlaying) {
       bgMusic.pause();
-      isMusicPlaying = false;
-      if (musicWidget) musicWidget.classList.remove('is-playing');
-      if (musicLabel) musicLabel.textContent = 'Nhạc: Tắt';
+      updateMusicUI(false);
     } else {
-      bgMusic.volume = 0.55;
-      bgMusic.play().then(() => {
-        isMusicPlaying = true;
-        if (musicWidget) musicWidget.classList.add('is-playing');
-        if (musicLabel) musicLabel.textContent = 'Nhạc: Bật';
-      }).catch(() => {});
+      startMusic();
     }
   }
 
   if (musicWidget) {
-    musicWidget.addEventListener('click', toggleAudio);
+    musicWidget.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleAudio();
+    });
   }
 
-  // Auto-attempt playback on first interaction
-  window.addEventListener('click', function tryAutoplayOnce() {
-    if (!isMusicPlaying && bgMusic) {
-      bgMusic.volume = 0.55;
-      bgMusic.play().then(() => {
-        isMusicPlaying = true;
-        if (musicWidget) musicWidget.classList.add('is-playing');
-        if (musicLabel) musicLabel.textContent = 'Nhạc: Bật';
-      }).catch(() => {});
-    }
-  }, { once: true });
+  // Eager Autoplay Attempts
+  startMusic();
+  window.addEventListener('load', startMusic);
+  document.addEventListener('DOMContentLoaded', startMusic);
+
+  // Fallback: Immediate start on ANY first interaction anywhere on page
+  const interactionEvents = ['pointerdown', 'touchstart', 'mousedown', 'keydown', 'scroll', 'wheel', 'click'];
+  function onFirstInteraction() {
+    startMusic();
+  }
+  function addAutoplayListeners() {
+    interactionEvents.forEach(evt => {
+      window.addEventListener(evt, onFirstInteraction, { passive: true, capture: true });
+      document.addEventListener(evt, onFirstInteraction, { passive: true, capture: true });
+    });
+  }
+  function removeAutoplayListeners() {
+    interactionEvents.forEach(evt => {
+      window.removeEventListener(evt, onFirstInteraction, { capture: true });
+      document.removeEventListener(evt, onFirstInteraction, { capture: true });
+    });
+  }
+  addAutoplayListeners();
 
 
   // 3. CANVAS 1: 3D MULTI-LAYER STARFIELD & SHOOTING METEORS
@@ -391,6 +441,7 @@
 
   function switchStage(stageNum) {
     if (!stages[stageNum]) return;
+    startMusic();
 
     Object.keys(stages).forEach(num => {
       const el = stages[num];

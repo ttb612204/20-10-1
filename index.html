@@ -29,8 +29,8 @@
   <canvas id="canvas-burst" aria-hidden="true"></canvas>
   <canvas id="canvas-trail" aria-hidden="true"></canvas>
 
-  <!-- Soundtrack Audio -->
-  <audio id="bg-music" preload="auto" loop src="assets/audio/soundtrack.mp3"></audio>
+  <!-- Soundtrack Audio (Autoplay with gesture fallback) -->
+  <audio id="bg-music" autoplay preload="auto" loop src="assets/audio/soundtrack.mp3"></audio>
 
   <!-- Floating Music Player Widget -->
   <aside id="music-widget" class="cosmic-music-widget" role="button" tabindex="0" aria-label="Bật hoặc tạm dừng nhạc nền" title="Bật / Tắt nhạc">
@@ -121,7 +121,7 @@
           <article class="celestial-card-item" data-idx="0" tabindex="0" role="button" aria-label="Xem ảnh 1: Dịu Dàng & Ngọt Ngào">
             <div class="planet-thumb-wrap">
               <span class="planet-badge-corner">#01</span>
-              <img src="https://files.catbox.moe/0vjpta.jpg" alt="Bùi Thị Hương Giang dịu dàng, ngọt ngào" loading="lazy">
+              <img src="" alt="Bùi Thị Hương Giang dịu dàng, ngọt ngào" loading="lazy">
             </div>
             <div class="planet-info-box">
               <h3 class="planet-title">Dịu Dàng & Ngọt Ngào</h3>
@@ -133,7 +133,7 @@
           <article class="celestial-card-item" data-idx="1" tabindex="0" role="button" aria-label="Xem ảnh 2: Chăm Chỉ & Tự Tin">
             <div class="planet-thumb-wrap">
               <span class="planet-badge-corner">#02</span>
-              <img src="https://files.catbox.moe/bwolgl.jpg" alt="Bùi Thị Hương Giang chăm chỉ, tự tin" loading="lazy">
+              <img src="" alt="Bùi Thị Hương Giang chăm chỉ, tự tin" loading="lazy">
             </div>
             <div class="planet-info-box">
               <h3 class="planet-title">Chăm Chỉ & Tự Tin</h3>
@@ -145,7 +145,7 @@
           <article class="celestial-card-item" data-idx="2" tabindex="0" role="button" aria-label="Xem ảnh 3: Thanh Lịch & Rạng Rỡ">
             <div class="planet-thumb-wrap">
               <span class="planet-badge-corner">#03</span>
-              <img src="https://files.catbox.moe/7y8h91.jpg" alt="Bùi Thị Hương Giang thanh lịch, rạng rỡ" loading="lazy">
+              <img src="" alt="Bùi Thị Hương Giang thanh lịch, rạng rỡ" loading="lazy">
             </div>
             <div class="planet-info-box">
               <h3 class="planet-title">Thanh Lịch & Rạng Rỡ</h3>
@@ -157,7 +157,7 @@
           <article class="celestial-card-item" data-idx="3" tabindex="0" role="button" aria-label="Xem ảnh 4: E Ấp & Duyên Dáng">
             <div class="planet-thumb-wrap">
               <span class="planet-badge-corner">#04</span>
-              <img src="https://files.catbox.moe/y2v8my.jpg" alt="Bùi Thị Hương Giang e ấp, duyên dáng" loading="lazy">
+              <img src="" alt="Bùi Thị Hương Giang e ấp, duyên dáng" loading="lazy">
             </div>
             <div class="planet-info-box">
               <h3 class="planet-title">E Ấp & Duyên Dáng</h3>
@@ -169,7 +169,7 @@
           <article class="celestial-card-item" data-idx="4" tabindex="0" role="button" aria-label="Xem ảnh 5: Tinh Nghịch & Rạng Ngời">
             <div class="planet-thumb-wrap">
               <span class="planet-badge-corner">#05</span>
-              <img src="https://files.catbox.moe/hj7wu4.jpg" alt="Bùi Thị Hương Giang tinh nghịch, rạng ngời" loading="lazy">
+              <img src="" alt="Bùi Thị Hương Giang tinh nghịch, rạng ngời" loading="lazy">
             </div>
             <div class="planet-info-box">
               <h3 class="planet-title">Tinh Nghịch & Rạng Ngời</h3>
@@ -294,23 +294,23 @@
 
           <!-- 5 Photo Nodes on Heart Curve -->
           <div class="heart-node-photo node-pos-1" data-idx="0" tabindex="0" role="button" title="Dịu Dàng & Ngọt Ngào - Chạm để phóng to">
-            <img src="https://files.catbox.moe/0vjpta.jpg" alt="Hương Giang">
+            <img src="" alt="Hương Giang">
           </div>
 
           <div class="heart-node-photo node-pos-2" data-idx="1" tabindex="0" role="button" title="Chăm Chỉ & Tự Tin - Chạm để phóng to">
-            <img src="https://files.catbox.moe/bwolgl.jpg" alt="Hương Giang">
+            <img src="" alt="Hương Giang">
           </div>
 
           <div class="heart-node-photo node-pos-3" data-idx="2" tabindex="0" role="button" title="Thanh Lịch & Rạng Rỡ - Chạm để phóng to">
-            <img src="https://files.catbox.moe/7y8h91.jpg" alt="Hương Giang">
+            <img src="" alt="Hương Giang">
           </div>
 
           <div class="heart-node-photo node-pos-4" data-idx="3" tabindex="0" role="button" title="E Ấp & Duyên Dáng - Chạm để phóng to">
-            <img src="https://files.catbox.moe/y2v8my.jpg" alt="Hương Giang">
+            <img src="" alt="Hương Giang">
           </div>
 
           <div class="heart-node-photo node-pos-5" data-idx="4" tabindex="0" role="button" title="Tinh Nghịch & Rạng Ngời - Chạm để phóng to">
-            <img src="https://files.catbox.moe/hj7wu4.jpg" alt="Hương Giang">
+            <img src="" alt="Hương Giang">
           </div>
 
           <!-- Optical Center Name Badge (Clickable Easter Egg) -->
@@ -475,6 +475,8 @@
 
   </main>
 
+  <!-- Photo Data: Embedded Base64 (No image files in Git, 100% reliable on deploy) -->
+  <script src="js/photos-data.js"></script>
   <!-- Modern Galaxy Application Controller -->
   <script src="js/galaxy-app.js"></script>
 </body>
