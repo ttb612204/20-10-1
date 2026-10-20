@@ -1,0 +1,12 @@
+# Personal Photos (Kept strictly private & hosted on Cloud CDN)
+assets/images/photos/
+*.jfif
+*.jpg
+*.jpeg
+*.png
+
+# System & Temporary files
+.DS_Store
+Thumbs.db
+node_modules/
+.env

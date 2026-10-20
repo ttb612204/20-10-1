@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ngân Hà Tri Ân — Bùi Thị Hương Giang (dân dất) | 20.10</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Concept 1 Stylesheet -->
+  <link rel="stylesheet" href="css/galaxy.css">
+</head>
+<body>
+
+  <!-- Cosmic Background Layers -->
+  <div class="space-background" aria-hidden="true"></div>
+  <div class="nebula-glow" aria-hidden="true"></div>
+
+  <!-- Interactive 3D Canvases: Stars, Bursts, Petals & Fairy Trail -->
+  <canvas id="canvas-stars" aria-hidden="true"></canvas>
+  <canvas id="canvas-petals" aria-hidden="true"></canvas>
+  <canvas id="canvas-burst" aria-hidden="true"></canvas>
+  <canvas id="canvas-trail" aria-hidden="true"></canvas>
+
+  <!-- Soundtrack Audio -->
+  <audio id="bg-music" preload="auto" loop src="assets/audio/soundtrack.mp3"></audio>
+
+  <!-- Floating Music Player Widget -->
+  <aside id="music-widget" class="cosmic-music-widget" role="button" tabindex="0" aria-label="Bật hoặc tạm dừng nhạc nền" title="Bật / Tắt nhạc">
+    <div class="vinyl-disc" aria-hidden="true">
+      <div class="vinyl-core">♫</div>
+    </div>
+    <span id="music-label" class="music-label">Nhạc: Tắt</span>
+    <div class="music-waves" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </aside>
+
+  <!-- Master App Container -->
+  <main class="app-container">
+
+    <!-- ======================================================================
+         STAGE 1: QUẢ CẦU PHA LÊ NGÂN HÀ (AWAKENING THE COSMOS)
+         ====================================================================== -->
+    <section id="stage-1" class="stage-section is-active" aria-label="Đánh thức dải ngân hà">
+      <div class="hero-galaxy-box">
+        
+        <div class="event-badge">
+          <span class="badge-dot"></span>
+          <span>Ngày Phụ Nữ Việt Nam 20/10 🌸</span>
+        </div>
+
+        <h1 class="main-heading">
+          Ngân Hà Tri Ân<br>
+          <span class="highlight-name">Bùi Thị Hương Giang</span>
+        </h1>
+
+        <p class="sub-lead">
+          Một vũ trụ thu nhỏ được tạo nên từ những điều chân thành nhất, dành riêng cho cô bạn mang biệt danh <span class="tag-dandat">Dân dất ( Boo Cute )</span>! ✨
+        </p>
+
+        <!-- Interactive 3D Cosmic Crystal Orb -->
+        <div id="orb-interactive-trigger" class="orb-scene-wrapper" role="button" tabindex="0" aria-label="Chạm để mở dải ngân hà" title="Chạm vào để mở quà">
+          <div class="orb-outer-ring" aria-hidden="true"></div>
+          <div class="orb-mid-ring" aria-hidden="true"></div>
+          <div class="cosmic-crystal-orb">
+            <div class="orb-inner-sparkle" aria-hidden="true"></div>
+            <div class="orb-center-label">
+              <span class="orb-sparkle-icon" aria-hidden="true">✦</span>
+              <span class="orb-core-text">Chạm để mở quà</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="orb-touch-hint" aria-hidden="true">
+          <span>✦</span>
+          <span>Chạm vào quả cầu pha lê để đánh thức dải ngân hà</span>
+          <span>✦</span>
+        </div>
+
+        <button type="button" id="btn-explore-galaxy" class="btn-primary">
+          <span>Khám phá dải ngân hà 20/10</span>
+          <span>🎁✦</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         STAGE 2: DẢI NGÂN HÀ 3D & 5 TIỂU HÀNH TINH KỶ NIỆM (ALBUM ẢNH)
+         ====================================================================== -->
+    <section id="stage-2" class="stage-section" aria-label="Bộ sưu tập 5 vì tinh tú kỷ niệm">
+      <div class="galaxy-gallery-section">
+        
+        <div class="event-badge">
+          <span class="badge-dot"></span>
+          <span>Bộ Sưu Tập Khoảnh Khắc • 20.10</span>
+        </div>
+
+        <h2 class="main-heading">
+          Những Vì Tinh Tú Của <span class="highlight-name">Hương Giang</span>
+        </h2>
+
+        <p class="sub-lead">
+          Chạm vào từng bức ảnh để ngắm nhìn những nụ cười tỏa sáng nhất của cô nàng Dân dất ( Boo Cute ) nhé! ✨
+        </p>
+
+        <!-- 5 Celestial Planetary Photo Cards -->
+        <div class="celestial-orbit-container">
+          
+          <!-- Photo 1 -->
+          <article class="celestial-card-item" data-idx="0" tabindex="0" role="button" aria-label="Xem ảnh 1: Dịu Dàng & Ngọt Ngào">
+            <div class="planet-thumb-wrap">
+              <span class="planet-badge-corner">#01</span>
+              <img src="https://files.catbox.moe/0vjpta.jpg" alt="Bùi Thị Hương Giang dịu dàng, ngọt ngào" loading="lazy">
+            </div>
+            <div class="planet-info-box">
+              <h3 class="planet-title">Dịu Dàng & Ngọt Ngào</h3>
+              <p class="planet-desc">Ánh mắt trong trẻo tựa ánh sao sớm mai, mang lại cảm giác bình yên.</p>
+            </div>
+          </article>
+
+          <!-- Photo 2 -->
+          <article class="celestial-card-item" data-idx="1" tabindex="0" role="button" aria-label="Xem ảnh 2: Chăm Chỉ & Tự Tin">
+            <div class="planet-thumb-wrap">
+              <span class="planet-badge-corner">#02</span>
+              <img src="https://files.catbox.moe/bwolgl.jpg" alt="Bùi Thị Hương Giang chăm chỉ, tự tin" loading="lazy">
+            </div>
+            <div class="planet-info-box">
+              <h3 class="planet-title">Chăm Chỉ & Tự Tin</h3>
+              <p class="planet-desc">Nhiệt huyết, bản lĩnh và luôn kiên định trên mọi bước đường cậu chọn.</p>
+            </div>
+          </article>
+
+          <!-- Photo 3 -->
+          <article class="celestial-card-item" data-idx="2" tabindex="0" role="button" aria-label="Xem ảnh 3: Thanh Lịch & Rạng Rỡ">
+            <div class="planet-thumb-wrap">
+              <span class="planet-badge-corner">#03</span>
+              <img src="https://files.catbox.moe/7y8h91.jpg" alt="Bùi Thị Hương Giang thanh lịch, rạng rỡ" loading="lazy">
+            </div>
+            <div class="planet-info-box">
+              <h3 class="planet-title">Thanh Lịch & Rạng Rỡ</h3>
+              <p class="planet-desc">Nét duyên dáng tỏa sáng tự nhiên giữa muôn vì tinh tú.</p>
+            </div>
+          </article>
+
+          <!-- Photo 4 -->
+          <article class="celestial-card-item" data-idx="3" tabindex="0" role="button" aria-label="Xem ảnh 4: E Ấp & Duyên Dáng">
+            <div class="planet-thumb-wrap">
+              <span class="planet-badge-corner">#04</span>
+              <img src="https://files.catbox.moe/y2v8my.jpg" alt="Bùi Thị Hương Giang e ấp, duyên dáng" loading="lazy">
+            </div>
+            <div class="planet-info-box">
+              <h3 class="planet-title">E Ấp & Duyên Dáng</h3>
+              <p class="planet-desc">Nụ cười mỉm xinh xắn làm bừng sáng mọi không gian xung quanh.</p>
+            </div>
+          </article>
+
+          <!-- Photo 5 -->
+          <article class="celestial-card-item" data-idx="4" tabindex="0" role="button" aria-label="Xem ảnh 5: Tinh Nghịch & Rạng Ngời">
+            <div class="planet-thumb-wrap">
+              <span class="planet-badge-corner">#05</span>
+              <img src="https://files.catbox.moe/hj7wu4.jpg" alt="Bùi Thị Hương Giang tinh nghịch, rạng ngời" loading="lazy">
+            </div>
+            <div class="planet-info-box">
+              <h3 class="planet-title">Tinh Nghịch & Rạng Ngời</h3>
+              <p class="planet-desc">Năng lượng tích cực ngập tràn siêu đáng yêu của Dân dất ( Boo Cute )!</p>
+            </div>
+          </article>
+
+        </div>
+
+        <button type="button" id="btn-to-letter" class="btn-primary">
+          <span>Xem bức thư tri ân từ ngàn vì sao</span>
+          <span>💌✦</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         STAGE 3: CHÒM SAO TRÁI TIM & BỨC THƯ TRI ÂN 20/10 (FINALE CLIMAX)
+         ====================================================================== -->
+    <section id="stage-3" class="stage-section" aria-label="Chòm sao trái tim và bức thư tri ân">
+      <div class="constellation-heart-section">
+        
+        <div class="event-badge">
+          <span class="badge-dot"></span>
+          <span>Happy Vietnamese Women's Day • 20.10</span>
+        </div>
+
+        <h2 class="main-heading">
+          Điều Kỳ Diệu Dành Riêng Cho <span class="highlight-name">Hương Giang</span>
+        </h2>
+
+        <p class="sub-lead" style="margin-bottom: 15px;">
+          5 khoảnh khắc đẹp nhất cùng hội tụ trên chòm sao Trái Tim vĩnh cửu.
+        </p>
+
+        <!-- 3D Heart Constellation with 5 Real Photos -->
+        <div class="heart-stage-wrapper">
+          <div class="heart-aura-glow" aria-hidden="true"></div>
+
+          <svg class="heart-svg-path-glow" viewBox="0 0 540 500" aria-hidden="true">
+            <defs>
+              <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffb8ca"/>
+                <stop offset="50%" stop-color="#f6c886"/>
+                <stop offset="100%" stop-color="#ff5983"/>
+              </linearGradient>
+              <linearGradient id="heartRoseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff94b0"/>
+                <stop offset="50%" stop-color="#ff4370"/>
+                <stop offset="100%" stop-color="#d61c4e"/>
+              </linearGradient>
+              <linearGradient id="heartLeafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4ade80"/>
+                <stop offset="100%" stop-color="#059669"/>
+              </linearGradient>
+              <linearGradient id="heartGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff0c2"/>
+                <stop offset="100%" stop-color="#f6c886"/>
+              </linearGradient>
+            </defs>
+            <!-- Glowing Core Heart Constellation Path -->
+            <path d="M 270,140 C 270,140 215,60 130,60 C 58,60 20,118 20,185 C 20,295 170,395 270,470 C 370,395 520,295 520,185 C 520,118 482,60 410,60 C 325,60 270,140 270,140 Z"/>
+
+            <!-- Floral Wreath Vines at Top Cleft -->
+            <g class="heart-floral-bloom" id="heart-top-floral">
+              <!-- Vine Leaves Left -->
+              <path d="M 270,140 Q 250,122 235,126 Q 248,114 260,132" fill="url(#heartLeafGrad)" opacity="0.85"/>
+              <path d="M 255,130 Q 240,118 230,122 Q 242,110 250,124" fill="url(#heartLeafGrad)" opacity="0.85"/>
+              <path d="M 245,122 Q 230,105 220,112 Q 232,100 240,116" fill="url(#heartLeafGrad)" opacity="0.8"/>
+              <!-- Vine Leaves Right -->
+              <path d="M 270,140 Q 290,122 305,126 Q 292,114 280,132" fill="url(#heartLeafGrad)" opacity="0.85"/>
+              <path d="M 285,130 Q 300,118 310,122 Q 298,110 290,124" fill="url(#heartLeafGrad)" opacity="0.85"/>
+              <path d="M 295,122 Q 310,105 320,112 Q 308,100 300,116" fill="url(#heartLeafGrad)" opacity="0.8"/>
+
+              <!-- Center Rose Blossom -->
+              <g transform="translate(270, 134)">
+                <circle cx="0" cy="0" r="14" fill="url(#heartRoseGrad)" opacity="0.95"/>
+                <circle cx="0" cy="0" r="10" fill="#ff5983"/>
+                <circle cx="0" cy="0" r="6" fill="#ff7da7"/>
+                <circle cx="0" cy="0" r="3" fill="url(#heartGoldGrad)"/>
+                <!-- Petal details -->
+                <path d="M-9,-3 Q0,-12 9,-3 Q0,6 -9,-3" fill="none" stroke="#fff" stroke-width="0.8" opacity="0.7"/>
+                <path d="M-6,5 Q0,11 6,5 Q0,-1 -6,5" fill="none" stroke="#fff" stroke-width="0.8" opacity="0.7"/>
+              </g>
+
+              <!-- Left Supporting Rosebud -->
+              <g transform="translate(244, 126) scale(0.75)">
+                <circle cx="0" cy="0" r="12" fill="url(#heartRoseGrad)" opacity="0.9"/>
+                <circle cx="0" cy="0" r="8" fill="#ff5983"/>
+                <circle cx="0" cy="0" r="4" fill="url(#heartGoldGrad)"/>
+              </g>
+
+              <!-- Right Supporting Rosebud -->
+              <g transform="translate(296, 126) scale(0.75)">
+                <circle cx="0" cy="0" r="12" fill="url(#heartRoseGrad)" opacity="0.9"/>
+                <circle cx="0" cy="0" r="8" fill="#ff5983"/>
+                <circle cx="0" cy="0" r="4" fill="url(#heartGoldGrad)"/>
+              </g>
+
+              <!-- Sparkle Starlets -->
+              <circle cx="230" cy="116" r="2" fill="#ffeaa7"/>
+              <circle cx="310" cy="116" r="2" fill="#ffeaa7"/>
+              <circle cx="270" cy="112" r="2.5" fill="#ffffff"/>
+            </g>
+
+            <!-- Bottom Point Floral Accent Vines -->
+            <g class="heart-floral-bloom" id="heart-bottom-floral">
+              <!-- Left vine creeping up -->
+              <path d="M 270,470 Q 255,445 242,425" fill="none" stroke="url(#heartLeafGrad)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M 252,438 Q 240,435 244,444 Z" fill="url(#heartLeafGrad)"/>
+              <circle cx="242" cy="425" r="4.5" fill="url(#heartRoseGrad)"/>
+              <circle cx="242" cy="425" r="1.8" fill="#ffeaa7"/>
+
+              <!-- Right vine creeping up -->
+              <path d="M 270,470 Q 285,445 298,425" fill="none" stroke="url(#heartLeafGrad)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M 288,438 Q 300,435 296,444 Z" fill="url(#heartLeafGrad)"/>
+              <circle cx="298" cy="425" r="4.5" fill="url(#heartRoseGrad)"/>
+              <circle cx="298" cy="425" r="1.8" fill="#ffeaa7"/>
+            </g>
+          </svg>
+
+          <!-- 5 Photo Nodes on Heart Curve -->
+          <div class="heart-node-photo node-pos-1" data-idx="0" tabindex="0" role="button" title="Dịu Dàng & Ngọt Ngào - Chạm để phóng to">
+            <img src="https://files.catbox.moe/0vjpta.jpg" alt="Hương Giang">
+          </div>
+
+          <div class="heart-node-photo node-pos-2" data-idx="1" tabindex="0" role="button" title="Chăm Chỉ & Tự Tin - Chạm để phóng to">
+            <img src="https://files.catbox.moe/bwolgl.jpg" alt="Hương Giang">
+          </div>
+
+          <div class="heart-node-photo node-pos-3" data-idx="2" tabindex="0" role="button" title="Thanh Lịch & Rạng Rỡ - Chạm để phóng to">
+            <img src="https://files.catbox.moe/7y8h91.jpg" alt="Hương Giang">
+          </div>
+
+          <div class="heart-node-photo node-pos-4" data-idx="3" tabindex="0" role="button" title="E Ấp & Duyên Dáng - Chạm để phóng to">
+            <img src="https://files.catbox.moe/y2v8my.jpg" alt="Hương Giang">
+          </div>
+
+          <div class="heart-node-photo node-pos-5" data-idx="4" tabindex="0" role="button" title="Tinh Nghịch & Rạng Ngời - Chạm để phóng to">
+            <img src="https://files.catbox.moe/hj7wu4.jpg" alt="Hương Giang">
+          </div>
+
+          <!-- Optical Center Name Badge (Clickable Easter Egg) -->
+          <div id="heart-center-badge" class="heart-center-badge" role="button" tabindex="0" aria-label="Mở lời nhắn bí mật dành cho Hương Giang" title="Chạm để mở lời nhắn bí mật!">
+            <span class="center-sparkle" aria-hidden="true">✦</span>
+            <h3 class="center-name-text">Bùi Thị Hương Giang</h3>
+            <div class="center-nick-text">✨ Dân dất ( Boo Cute ) ✨</div>
+            <div class="center-secret-hint" aria-hidden="true">
+              <span>♥</span>
+              <span>Chạm để mở điều bí mật</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dedicated Wish Letter Card -->
+        <div class="wish-letter-container">
+          <div class="wish-glass-card">
+            <!-- 4 Botanical Corner Flourishes -->
+            <svg class="floral-corner-flourish floral-corner-tl" viewBox="0 0 50 50" aria-hidden="true">
+              <path d="M5,45 C5,20 20,5 45,5 C25,12 12,25 5,45 Z" fill="#ff85a2" opacity="0.6"/>
+              <path d="M5,5 Q20,12 35,5 Q20,20 5,35 Z" fill="none" stroke="#f6c886" stroke-width="1.2"/>
+              <circle cx="12" cy="12" r="3" fill="#ff5983"/>
+              <circle cx="22" cy="8" r="2" fill="#ffd1dc"/>
+              <circle cx="8" cy="22" r="2" fill="#ffd1dc"/>
+            </svg>
+            <svg class="floral-corner-flourish floral-corner-tr" viewBox="0 0 50 50" aria-hidden="true">
+              <path d="M5,45 C5,20 20,5 45,5 C25,12 12,25 5,45 Z" fill="#ff85a2" opacity="0.6"/>
+              <path d="M5,5 Q20,12 35,5 Q20,20 5,35 Z" fill="none" stroke="#f6c886" stroke-width="1.2"/>
+              <circle cx="12" cy="12" r="3" fill="#ff5983"/>
+              <circle cx="22" cy="8" r="2" fill="#ffd1dc"/>
+              <circle cx="8" cy="22" r="2" fill="#ffd1dc"/>
+            </svg>
+            <svg class="floral-corner-flourish floral-corner-bl" viewBox="0 0 50 50" aria-hidden="true">
+              <path d="M5,45 C5,20 20,5 45,5 C25,12 12,25 5,45 Z" fill="#ff85a2" opacity="0.6"/>
+              <path d="M5,5 Q20,12 35,5 Q20,20 5,35 Z" fill="none" stroke="#f6c886" stroke-width="1.2"/>
+              <circle cx="12" cy="12" r="3" fill="#ff5983"/>
+              <circle cx="22" cy="8" r="2" fill="#ffd1dc"/>
+              <circle cx="8" cy="22" r="2" fill="#ffd1dc"/>
+            </svg>
+            <svg class="floral-corner-flourish floral-corner-br" viewBox="0 0 50 50" aria-hidden="true">
+              <path d="M5,45 C5,20 20,5 45,5 C25,12 12,25 5,45 Z" fill="#ff85a2" opacity="0.6"/>
+              <path d="M5,5 Q20,12 35,5 Q20,20 5,35 Z" fill="none" stroke="#f6c886" stroke-width="1.2"/>
+              <circle cx="12" cy="12" r="3" fill="#ff5983"/>
+              <circle cx="22" cy="8" r="2" fill="#ffd1dc"/>
+              <circle cx="8" cy="22" r="2" fill="#ffd1dc"/>
+            </svg>
+
+            <header class="letter-header">
+              <span class="letter-seal" aria-hidden="true">🌸</span>
+              <h3 class="letter-recipient">Bùi Thị Hương Giang thân mến!</h3>
+            </header>
+
+            <!-- Interactive Blooming Rose Gift (Stage 3 Climax) -->
+            <div id="blooming-rose-gift" class="blooming-rose-container" role="button" tabindex="0" aria-label="Chạm để mở đóa hồng 20/10">
+              <div class="rose-aura-glow" aria-hidden="true"></div>
+              <svg class="rose-bloom-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                  <linearGradient id="roseBloomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ff94b0"/>
+                    <stop offset="50%" stop-color="#ff4370"/>
+                    <stop offset="100%" stop-color="#d61c4e"/>
+                  </linearGradient>
+                  <linearGradient id="roseStemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#4ade80"/>
+                    <stop offset="100%" stop-color="#059669"/>
+                  </linearGradient>
+                </defs>
+                <!-- Rose stem & leaves -->
+                <path d="M50,58 Q48,76 50,92" stroke="url(#roseStemGrad)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                <path d="M49,72 Q35,66 30,75 Q42,80 49,74" fill="#22c55e" stroke="#16a34a" stroke-width="0.8"/>
+                <path d="M51,68 Q65,60 70,69 Q60,76 51,70" fill="#22c55e" stroke="#16a34a" stroke-width="0.8"/>
+                <!-- Outer petals -->
+                <path d="M28,40 C22,26 36,16 50,25 C64,16 78,26 72,40 C76,54 59,62 50,60 C41,62 24,54 28,40 Z" fill="url(#roseBloomGrad)"/>
+                <!-- Mid petals -->
+                <path d="M34,36 C30,25 41,19 50,24 C59,19 70,25 66,36 C68,47 57,54 50,51 C43,54 32,47 34,36 Z" fill="#ff5983"/>
+                <!-- Inner swirl petals -->
+                <path d="M41,32 C39,26 47,22 50,25 C53,22 61,26 59,32 C60,39 55,42 50,41 C45,42 40,39 41,32 Z" fill="#ff7da7"/>
+                <circle cx="50" cy="31" r="5" fill="#ffeaa7"/>
+                <circle cx="50" cy="31" r="2.5" fill="#f6c886"/>
+              </svg>
+              <div class="rose-gift-caption">
+                <span class="rose-sparkle">🌹</span>
+                <span>Chạm vào đóa hồng để nhận lời chúc đặc biệt</span>
+                <span class="rose-sparkle">✨</span>
+              </div>
+              <div class="rose-revealed-msg" style="display: none;">
+                🌸 "Gửi tới Dân dất đóa hồng rạng rỡ nhất ngày 20/10 — Chúc cậu luôn ngập tràn niềm vui, tự tin tỏa sáng và bình an!" 💖
+              </div>
+            </div>
+
+            <div class="letter-body">
+              <p>
+                Nhân ngày Phụ nữ Việt Nam 20/10, chúc Giang (cô bạn <b>Dân dất — Boo Cute</b> đáng yêu) luôn luôn xinh đẹp, rạng rỡ, bình an và ngập tràn niềm vui.
+              </p>
+              <p>
+                Mong rằng giữa vũ trụ bao la này, cậu sẽ luôn gặp được những điều dịu dàng nhất, có thật nhiều lý do để mỉm cười và luôn tự tin tỏa sáng theo cách riêng của mình. Cậu luôn mang lại nguồn năng lượng rất tích cực và ấm áp cho mọi người xung quanh.
+              </p>
+              <p>
+                Năm khoảnh khắc rạng rỡ, ngàn vì tinh tú và một trái tim chân thành dành riêng cho Giang. Mong rằng khi nhìn lại, Giang sẽ luôn nhớ rằng mình luôn xứng đáng với những điều tuyệt vời nhất!
+              </p>
+              <p class="wish-quote">
+                Chúc Dân dất ( Boo Cute ) có một ngày 20/10 thật ngọt ngào, ý nghĩa và đáng nhớ! 💖✨
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 3 Navigation Actions -->
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
+          <button type="button" id="btn-back-to-photos" class="btn-secondary">
+            <span>📸 Ngắm lại album ảnh</span>
+          </button>
+          <button type="button" id="btn-replay-all" class="btn-secondary">
+            <span>↺ Khám phá lại từ đầu</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         MODAL 1: LIGHTBOX FULLSCREEN ZOOM
+         ====================================================================== -->
+    <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Xem chi tiết ảnh" aria-hidden="true">
+      <div class="lightbox-modal-content">
+        <button type="button" id="lightbox-close" class="modal-close-btn" aria-label="Đóng ảnh">&times;</button>
+        
+        <button type="button" id="lightbox-prev" class="lightbox-nav-btn prev" aria-label="Ảnh trước">&lsaquo;</button>
+        <div class="lightbox-img-wrapper">
+          <img id="lightbox-img" src="" alt="Ảnh phóng to của Hương Giang">
+        </div>
+        <button type="button" id="lightbox-next" class="lightbox-nav-btn next" aria-label="Ảnh kế tiếp">&rsaquo;</button>
+
+        <div id="lightbox-caption" class="lightbox-caption-text"></div>
+        <div id="lightbox-counter" class="lightbox-counter"></div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         MODAL 2: SECRET MESSAGE EASTER EGG
+         ====================================================================== -->
+    <div id="secret-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Điều bí mật dành riêng cho Hương Giang" aria-hidden="true">
+      <div class="secret-card-box">
+        <button type="button" id="secret-close" class="modal-close-btn" aria-label="Đóng">&times;</button>
+        
+        <div class="secret-badge">Điều Bí Mật Dành Riêng Cho Giang 💌</div>
+        <h3 class="secret-title">Cảm Ơn Vì Cậu Luôn Tỏa Sáng!</h3>
+        
+        <p class="secret-text">
+          Từ những nụ cười trong trẻo, ánh mắt ấm áp cho đến sự đáng yêu và năng lượng tích cực mỗi ngày... Cảm ơn Giang vì đã luôn là cô bạn <b>Dân dất ( Boo Cute )</b> tuyệt vời đến thế!
+          <br><br>
+          Chúc cậu một ngày 20/10 ngập tràn niềm vui, hoa và những điều ngọt ngào nhất. Mong Giang luôn tự tin, hạnh phúc và rạng rỡ như một đóa hoa thơm ngát nhé! 🌸💖
+        </p>
+        
+        <div class="secret-signature">— From someone who always admires your smile —</div>
+        
+        <button type="button" id="secret-confirm" class="btn-primary">
+          <span>Khép lại bằng yêu thương ♡</span>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Modern Galaxy Application Controller -->
+  <script src="js/galaxy-app.js"></script>
+</body>
+</html>
